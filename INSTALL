@@ -1,0 +1,5 @@
+Na linuxie:
+1. wrzucić style/conditionals.sty i songbook.sty do ~/texmf/tex/latex/songbook
+2. sudo texhash
+3. odpalic z jakimis opcjami skrypt
+
