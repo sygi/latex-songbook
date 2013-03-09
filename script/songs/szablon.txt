@@ -1,0 +1,21 @@
+\renewcommand{\SBChordRaise}{0ex}
+\begin{song}{Tytuł}{Autor}
+%trzy linie wolnego...?!
+
+
+\begin{SBVerse}
+Zwrotka1+akordy \hfill \Ch{a}{} \Ch{d}{} \Ch{e}{} \hspace{20mm}
+%linia wolnego
+
+Ile policzyłaś mi za swą przyjaźń 
+
+\end{SBVerse}
+\begin{SBOpGroup}
+Refren1+akordy\hfill\Ch{a}{} \Ch{d}{} \Ch{e}{}\hspace{20mm}
+
+\end{SBOpGroup}
+\begin{SBVerse}
+Zwrotka2...
+
+\end{SBVerse}
+\end{song}

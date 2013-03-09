@@ -1,0 +1,81 @@
+\renewcommand{\SBChordRaise}{0ex}
+\begin{song}{Autsajder}{Dżem}
+
+
+
+
+\begin{SBVerse}
+
+Chociaż puste mam kieszenie \hfill \Ch{D}{} \Ch{D4}{} \hspace{20mm}
+
+No i wódy czasem brak \hfill \Ch{D}{} \Ch{D4}{} \hspace{20mm}
+
+Ja już nigdy się nie zmienię \hfill \Ch{A}{} \hspace{20mm}
+
+Zawsze będę żył już tak \hfill \Ch{D}{} \hspace{20mm}
+
+Nie słuchałem nigdy ojca
+
+Choć przestrzegał zgnoją Cię
+
+Z naiwności w oczach chłopca
+
+Dziś już wielu śmieje się
+
+
+
+\end{SBVerse}
+\begin{SBOpGroup}
+
+Ale jedno wiem po latach \hfill \Ch{G}{} \hspace{20mm}
+
+Prawdę musisz znać i ty
+
+Zawsze warto być człowiekiem \hfill \Ch{E}{} \hspace{20mm}
+
+Choć tak łatwo zejść na psy \hfill \Ch{A}{} \hspace{20mm}
+
+
+
+\end{SBOpGroup}
+\begin{SBVerse}
+
+Kumpel zdradził mnie nie jeden
+
+I nie jeden przegnał, lecz
+
+Nie szukałem zemsty w niebie
+
+Co kto robi jego rzecz.
+
+Ta dziewczyna którą miałem
+
+Chciała w życiu tylko mnie
+
+Teraz z innym jest na stałe
+
+Każdy kocha tak jak chce
+
+
+
+\end{SBVerse}
+\begin{SBVerse}
+
+Chociaż puste mam kieszenie
+
+No i wódy czasem brak
+
+Ja już nigdy się nie zmienię
+
+Zawsze będę, żył już tak
+
+Nadal puste mam kieszenie
+
+Nadal forsy, forsy brak
+
+Forsę, będę, będę kraść
+
+No bo wódy, wódy brak
+
+\end{SBVerse}
+\end{song}
