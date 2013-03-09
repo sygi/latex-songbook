@@ -95,9 +95,9 @@
   \fontseries{sbc}\fontshape{n}\selectfont}     %=cmssbc12 at 14.4pt
 \newcommand{\ChBkFont}{\ChFont\fontseries{m}    %
   \selectfont}                                  % =cmssm12 at 14.4pt
-\newcommand{\CpyRtFont}{\footnotesize}          % = cmr10  at 10pt
+\newcommand{\CpyRtFont}{\normalsize}          % = cmr10  at 10pt
 \newcommand{\CpyRtInfoFont}{\tiny}              % = cmss8  at  8pt
-\newcommand{\STitleFont}{\large\bf\sf}          % = cmss12 at 14.4pt
+\newcommand{\STitleFont}{\Large\bf\sf}          % = cmss12 at 14.4pt
 \newcommand{\STitleKeyFont}{\large}             % = cmr12  at 14.4pt
 \font\STNFont=cmtt12 at 20pt
 \newcommand{\STitleNumberFont}{\STNFont}        % = cmtt12 at 20pt
@@ -129,8 +129,8 @@
 \newcommand{\LeftMarginSBChorus} {4em}
 \newcommand{\LeftMarginSBSection}{\LeftMarginSBChorus}
 \newcommand{\LeftMarginSBVerse}  {\LeftMarginSBChorus}
-\newcommand{\SBChordRaise}       {2.25ex}
-\newcommand{\SBOldChordRaise}    {2.90ex}
+\newcommand{\SBChordRaise}       {0ex} % {2.25ex} zmienilem zeby byly w tej samej linii
+\newcommand{\SBOldChordRaise}    {0ex} % {2.90ex}
 \newcommand{\SBRuleRaiseAmount}  {0.57ex}
 \newcommand{\SpaceAboveSTitle}   {0.5in}
 \newcommand{\SpaceAfterTitleBlk} {-1.75ex}
@@ -652,8 +652,8 @@
 \newcommand{\SBIntersyllableRule}{\hrulefill}
 \newcommand{\SBIntroTag}         {Intro:}
 \newcommand{\SBPubDom}           {Public Domain}
-\newcommand{\SBUnknownTag}       {}
-\newcommand{\SBWAndMTag}         {}
+\newcommand{\SBUnknownTag}       {} %usunalem Unknown
+\newcommand{\SBWAndMTag}         {} %usunalem info
 \newcommand{\Songbook}           {\textrm{Song$\flat$ook}}
 
 \newcommand{\theSongComposer}{the Composer}
@@ -810,16 +810,16 @@
   \if#1Y\begin{center}\fi
     \if\blank{#2}%
       \if\blank{#3}%
-        {\CpyRtFont\copyright \SBUnknownTag{} \CpyRtInfoFont}%
+        {\CpyRtFont \SBUnknownTag{} \CpyRtInfoFont}%
       \else
-        {\CpyRtFont\copyright \SBUnknownTag{} \CpyRtInfoFont #3}%
+        {\CpyRtFont \SBUnknownTag{} \CpyRtInfoFont #3}%
       \fi%
     \else%
       \ifthenelse{\equal{#2}{\SBPubDom}}
       {%then
         {\CpyRtFont #2 \CpyRtInfoFont #3}%
       }{%else
-        {\CpyRtFont\copyright #2 \CpyRtInfoFont #3}%
+        {\CpyRtFont #2 \CpyRtInfoFont #3}%
       }%fi
     \fi%
   \if#1Y\end{center}\fi
@@ -863,13 +863,13 @@
     \else\keyIndex{{\protect\sbChord#3\protect\relax} -- #2}{\theSBSongCnt}\fi%
   \vspace{\SpaceAboveSTitle}%
   \if#1Y\begin{center}\fi
-    {\STitleNumberFont\theSBSongCnt}{\STitleFont\ --- #2}%
-    \ifWordsOnly\relax\else{\STitleKeyFont\ [{\sbChord#3\relax}]}\fi%
+    {\STitleNumberFont}{\STitleFont\ #2}%
+    \relax%
   \if#1Y\end{center}\fi
   \STitleMarkboth{#2}{\relax}%
   }
 
-\newenvironment{song}[7][Y]{                    % Comment markers to negate
+\newenvironment{song}[5][Y]{                    % Comment markers to negate
   \if#1Y\ExcludeSongfalse\else\ExcludeSongtrue\fi% the newline.
   \ifPrintAllSongs\ExcludeSongfalse\fi          %
   \SongMarkboth{\relax}{\relax}                 %
@@ -878,23 +878,22 @@
   \ifWordsOnly                                  %
     \setlength{\parindent}{0pt}                 %
   \fi                                           %
-  \renewcommand{\theSongComposer}{#5}           %
-  \if\blank{#5}                                 %
+  \renewcommand{\theSongComposer}{}           %
+  \if\blank{asdf}                                 %
     \renewcommand{\theSongComposerU}{\SBUnknownTag}%
   \else                                         %
-    \renewcommand{\theSongComposerU}{#5}        %
+    \renewcommand{\theSongComposerU}{}        %
   \fi                                           %
-  \renewcommand{\theSongCopyRt}{#4}             %
-  \renewcommand{\theSongKey}{#3}                %
-  \renewcommand{\theSongLicense}{#7}            %
-  \renewcommand{\theSongScriptRef}{#6}          %
+  \renewcommand{\theSongCopyRt}{#3}             %
+  \renewcommand{\theSongLicense}{blabla}            %
+  \renewcommand{\theSongScriptRef}{}          %
   \renewcommand{\theSongTitle}{#2}              %
   \renewcommand{\theXlatnBy}{}                  %
   \renewcommand{\theXlatnLang}{\SBBaseLang}     %
   \renewcommand{\theXlatnPerm}{}                %
   \renewcommand{\theXlatnTitle}{}               %
   %
-  \addtocounter{SBSongCnt}{1}                   %
+  \addtocounter{SBSongCnt}{1}                   % 1
   %
   \ifExcludeSong                                %
     \titleContentsSkip{\theSongTitle}{\theSongKey}%
@@ -908,15 +907,10 @@
     \begin{samepage}%
   \fi%
   \begin{center}
-    \STitle[N]{\theSongTitle}{#3}\\
+    \STitle[N]{\theSongTitle}{#2}\\
     \vspace{-.5ex}
-    \CpyRt[N]{#4}{#7}\\
+    \CpyRt[N]{#3}{}\\
     \vspace{-.5ex}
-    \WAndM[N]{#5}\\
-    \if\given{#6}%
-      \vspace{-.75ex}
-      \ScriptRef[N]{\theSongScriptRef}\\
-    \fi%
   \end{center}%
   \vspace{\SpaceAfterTitleBlk}
   \ifCompactSongMode
