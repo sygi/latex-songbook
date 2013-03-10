@@ -5,6 +5,9 @@ if len(sys.argv) != 2:
     sys.exit(0)
 
 f = open(sys.argv[1], 'r')
+#if (sys.argv[1].find("--") == 0):
+#    g = open("u" + sys.argv[1] + ".txt", 'w')
+#else:
 g = open(sys.argv[1] + '.txt', 'w')
 name = os.path.basename(sys.argv[1])
 

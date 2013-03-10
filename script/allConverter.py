@@ -6,3 +6,4 @@ if len(sys.argv) != 3:
 
 os.system("./convert.py < " + sys.argv[1] + " > " + sys.argv[2])
 os.system("./rename.py " + sys.argv[2])
+os.system("rm ./" + sys.argv[2])
