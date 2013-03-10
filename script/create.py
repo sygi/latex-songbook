@@ -17,7 +17,7 @@ out.write("""\\documentclass{book}
 """)
 
 for f in files:
-    if not os.path.isfile('songs/' + f):
+    if not f.endswith(".txt"):
         continue
     g = open('songs/' + f, 'r')
     out.write(g.read())
