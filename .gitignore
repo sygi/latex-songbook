@@ -6,6 +6,7 @@
 *.blg
 *.dvi
 *.fdb_latexmk
+script/songs/moje
 *.glg
 *.glo
 *.gls

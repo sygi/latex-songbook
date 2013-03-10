@@ -14,8 +14,16 @@ openedRef = False
 while(True):
     try:
         line = raw_input()
-        line = re.sub('xch', '\\hfill \\Ch{}{} \\hspace{20mm}', line)
-        if (line == "svv"): #StartVerse
+        a = line.find("xch")
+        if a != -1:
+            chords = line[(a+3):]
+            lsCh = chords.split()
+            bla = ""
+            for chord in lsCh:
+                bla += " \\Ch{" + chord + "}{}"
+            line = line[:a] + '\\hfill' + bla + ' \\hspace{20mm}'
+
+        if (line.find("svv") != -1): #StartVerse
             if (openedVerse):
                 print "\\end{SBVerse}"
                 openedVerse = False
@@ -24,7 +32,7 @@ while(True):
                 openedRef = False
             line = "\\begin{SBVerse}"
             openedVerse = True
-        if (line == "srr"):
+        if (line.find("srr") != -1):
             if (openedVerse):
                 print "\\end{SBVerse}"
                 openedVerse = False
