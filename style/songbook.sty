@@ -67,6 +67,7 @@
 %%========================================================
 \RequirePackage{calc}
 
+
 %%========================================================
 %%              I F   C O N S T R U C T S                %
 %%========================================================
@@ -606,6 +607,8 @@
 
 \RequirePackage{ifthen}
 
+\RequirePackage{hyperref}
+
 \ifCompactSongMode
   \RequirePackage{multicol}[1999/05/25]
 \fi
@@ -704,6 +707,7 @@
 %%                                                       %
 %%                A N D   I N D I C E S                  %
 %%=======================================================%
+
 \def\makeArtistIndex{\if@filesw \newwrite\@artistIndexfile
   \immediate\openout\@artistIndexfile=\jobname.aIdx
   \def\artistIndex{\@bsphack\begingroup
@@ -758,10 +762,12 @@
              \def\protect####1{\string####1\space}\@sanitize
              \@wrTitleContents}\typeout
   {Writing table of contents file \jobname.toc }\fi}
+  
+
 
 \def\@wrTitleContents#1#2{\let\thepage\relax
    \xdef\@gtempa{\write\@titleContentsfile{\string
-       \item\ \theSBSongCnt. #1\protect\hbox{, \thepage}}}\endgroup\@gtempa
+       \item\ \protect\hyperlink{page.\thepage}{\theSBSongCnt. #1}\protect\hbox{, \thepage}}}\endgroup\@gtempa
    \if@nobreak \ifvmode\nobreak\fi\fi\@esphack}
 
 \def\titleContents{\@bsphack\begingroup \@sanitize\@titleContents}
@@ -909,8 +915,12 @@
   \begin{center}
     \STitle[N]{\theSongTitle}{#2}\\
     \vspace{-.5ex}
+    \if\blank{#3}
+    \relax
+    \else
     \CpyRt[N]{#3}{}\\
     \vspace{-.5ex}
+    \fi
   \end{center}%
   \vspace{\SpaceAfterTitleBlk}
   \ifCompactSongMode
