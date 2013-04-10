@@ -1,11 +1,12 @@
 #!/usr/bin/python2
 # -*- coding: utf-8 -*-
 import os
+import re
 
 files = os.listdir('songs')
 
-files.sort()
-#tutaj mozna zrobic odpowiednie sortowanie files
+#sortowanie po nazwach piosenek
+files.sort(key=lambda fil: re.sub(r'.*--', '', fil))
 
 out = open('spiewnik.tex', 'w')
 

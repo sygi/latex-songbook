@@ -92,7 +92,7 @@
 %%                      F O N T S                        %
 %%========================================================
 \newcommand{\ChBassFont}{\normalsize\bf\sf}     % = cmss12 at 12.0pt
-\newcommand{\ChFont}{\large\fontfamily{\sfdefault}%
+\newcommand{\ChFont}{\Large\fontfamily{\sfdefault} %bylo large
   \fontseries{sbc}\fontshape{n}\selectfont}     %=cmssbc12 at 14.4pt
 \newcommand{\ChBkFont}{\ChFont\fontseries{m}    %
   \selectfont}                                  % =cmssm12 at 14.4pt
@@ -118,23 +118,23 @@
 \newcommand{\SBMargNoteFont}{\scriptsize}       % = cmti8  at  8pt
 \newcommand{\SBRefFont}{\SBMargNoteFont}        % = cmti8  at  8pt
 \newcommand{\SBDefaultFont}{\fontfamily{\rmdefault}%
-  \large}                                       % = cmr12  at 14.4pt
+  \LARGE}                                       % = cmr12  at 14.4pt bylo large
 \newcommand{\SBLyricNoteFont}{\footnotesize\sf} % = cmss10 at 10pt
 \newcommand{\SBOHContTagFont}{\small\bf\sf\itshape} % = cmss10 at 10.9pt
 
 %%========================================================
 %%    C O N F I G U R A B L E   D I M E N S I O N S      %
 %%========================================================
-\newcommand{\HangAmt}            {1.5em}
-\newcommand{\LeftMarginSBBracket}{2.85em}
-\newcommand{\LeftMarginSBChorus} {4em}
+\newcommand{\HangAmt}            {1.5em} % 1.5
+\newcommand{\LeftMarginSBBracket}{2.85em} % 2.85
+\newcommand{\LeftMarginSBChorus} {-2em} % 4em o ile w lewo jest przesuniety refren
 \newcommand{\LeftMarginSBSection}{\LeftMarginSBChorus}
 \newcommand{\LeftMarginSBVerse}  {\LeftMarginSBChorus}
 \newcommand{\SBChordRaise}       {0ex} % {2.25ex} zmienilem zeby byly w tej samej linii
 \newcommand{\SBOldChordRaise}    {0ex} % {2.90ex}
 \newcommand{\SBRuleRaiseAmount}  {0.57ex}
 \newcommand{\SpaceAboveSTitle}   {0.5in}
-\newcommand{\SpaceAfterTitleBlk} {-1.75ex}
+\newcommand{\SpaceAfterTitleBlk} {-1ex} % -1.75
 \newcommand{\SpaceAfterChorus}   {\vspace{0ex plus0ex  minus3ex}}
 \newcommand{\SpaceAfterOpGroup}  {\vspace{0ex plus0ex  minus3ex}}
 \newcommand{\SpaceAfterSBBracket}{\vspace{2ex plus1ex  minus1ex}}
@@ -294,18 +294,18 @@
       \selectfont}                                  % =cmssm12 at 12.0pt
     \renewcommand{\SBDefaultFont}{\normalsize}      % = cmr12  at 12.0pt
     \renewcommand{\SBOccursBrktFont}{\large\bf\sf}  % = cmss10 at 10.9pt
-  \else\ifSBpaperLtr
-    \topmargin=0.5in
-    \headheight=0.21in
-    \headsep=0.20in
-    \textheight=9.4in
-    \footskip=0.19in
+  \else\ifSBpaperLtr % tutaj jest ta opcja, ktorej uzywam :P
+    \topmargin=0.05in % 0.5 margines od gory
+    \headheight=0.15in % 0.21 wysokosc tytulu z boku
+    \headsep=0.07in % 0.20 odleglosc jego od normalnego tytulu
+    \textheight=9.4in % 9.4
+    \footskip=0.19in % 0.19
     %
     \oddsidemargin=0.75in
-    \evensidemargin=1.5in
-    \textwidth=6.25in
+    \evensidemargin=0.75in % 1.5
+    \textwidth=7.5in % 6.25
     \marginparsep=0.2in
-    \marginparwidth=0.8in
+    \marginparwidth=0.8in % 0.8in
   \else\ifSBpaperLgl
     \topmargin=0.5in
     \headheight=0.21in
@@ -765,7 +765,7 @@
   
 
 
-\def\@wrTitleContents#1#2{\let\thepage\relax
+\def\@wrTitleContents#1#2#3{\let\thepage\relax
    \xdef\@gtempa{\write\@titleContentsfile{\string
        \item\ \protect\hyperlink{page.\thepage}{\theSBSongCnt. #1}\protect\hbox{, \thepage}}}\endgroup\@gtempa
    \if@nobreak \ifvmode\nobreak\fi\fi\@esphack}
