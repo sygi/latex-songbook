@@ -12,3 +12,8 @@ remove:
 	rm spiewnik.[^p]*
 	rm toc.[^t^p]*
 	rm all.[^p]*
+
+random:
+	python2 ./create.py random
+	rm spiewnik.[^p]*
+	rm all.[^p]*

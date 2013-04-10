@@ -96,9 +96,9 @@
   \fontseries{sbc}\fontshape{n}\selectfont}     %=cmssbc12 at 14.4pt
 \newcommand{\ChBkFont}{\ChFont\fontseries{m}    %
   \selectfont}                                  % =cmssm12 at 14.4pt
-\newcommand{\CpyRtFont}{\normalsize}          % = cmr10  at 10pt
+\newcommand{\CpyRtFont}{\large}          		% = cmr10  at 10pt bylo normalsize
 \newcommand{\CpyRtInfoFont}{\tiny}              % = cmss8  at  8pt
-\newcommand{\STitleFont}{\Large\bf\sf}          % = cmss12 at 14.4pt
+\newcommand{\STitleFont}{\LARGE\bf\sf}          % = cmss12 at 14.4pt bylo Large
 \newcommand{\STitleKeyFont}{\large}             % = cmr12  at 14.4pt
 \font\STNFont=cmtt12 at 20pt
 \newcommand{\STitleNumberFont}{\STNFont}        % = cmtt12 at 20pt
@@ -112,7 +112,7 @@
 \font\SBOBFont=cmss17 at 30pt
 \newcommand{\SBOccursBrktFont}{\SBOBFont}       % = cmss17 at 30pt
 \newcommand{\SBOccursTagFont}{\small\bf\sf}     % = cmss10 at 10.0pt
-\newcommand{\SBVerseNumberFont}{\small\bf\sf}   % = cmss10 at 10.9pt
+\newcommand{\SBVerseNumberFont}{\Large\bf\sf}   % = cmss10 at 10.9pt
 \newcommand{\SBSectionNumberFont}{\small\bf\sf} % = cmss10 at 10.9pt
 
 \newcommand{\SBMargNoteFont}{\scriptsize}       % = cmti8  at  8pt
@@ -298,7 +298,7 @@
     \topmargin=0.05in % 0.5 margines od gory
     \headheight=0.15in % 0.21 wysokosc tytulu z boku
     \headsep=0.07in % 0.20 odleglosc jego od normalnego tytulu
-    \textheight=9.4in % 9.4
+    \textheight=9.0in % 9.4
     \footskip=0.19in % 0.19
     %
     \oddsidemargin=0.75in
@@ -765,7 +765,7 @@
   
 
 
-\def\@wrTitleContents#1#2#3{\let\thepage\relax
+\def\@wrTitleContents#1#2{\let\thepage\relax
    \xdef\@gtempa{\write\@titleContentsfile{\string
        \item\ \protect\hyperlink{page.\thepage}{\theSBSongCnt. #1}\protect\hbox{, \thepage}}}\endgroup\@gtempa
    \if@nobreak \ifvmode\nobreak\fi\fi\@esphack}

@@ -2,11 +2,16 @@
 # -*- coding: utf-8 -*-
 import os
 import re
+import sys
+from random import shuffle
 
 files = os.listdir('songs')
 
 #sortowanie po nazwach piosenek
 files.sort(key=lambda fil: re.sub(r'.*--', '', fil))
+
+if len(sys.argv) == 2 and sys.argv[1] == 'random':
+    shuffle(files)
 
 out = open('spiewnik.tex', 'w')
 
